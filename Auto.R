@@ -1,0 +1,117 @@
+attach(Auto)
+which(is.na(Auto$mpg))
+which(is.na(Auto$cylinders))
+which(is.na(Auto$displacement))
+which(is.na(Auto$horsepower))
+which(is.na(Auto$weight))
+which(is.na(Auto$acceleration))
+which(is.na(Auto$year))
+which(is.na(Auto$origin))
+median(horsepower, na.rm = T)
+my_mode <- function(x) {    #statistical mode
+  unique_x <- unique(x)
+  tabulate_x <- tabulate(match(x, unique_x))
+  unique_x[tabulate_x == max(tabulate_x)]
+}
+my_mode(horsepower)
+horsepower[is.na(horsepower)] <- median(horsepower, na.rm = T)
+print(horsepower)
+sd <- function(x) sqrt(var(x))
+mean(Auto$mpg)
+sd(Auto$mpg)
+mean(Auto$cylinders)
+sd(Auto$cylinders)
+mean(Auto$displacement)
+sd(Auto$displacement)
+mean(horsepower)
+sd(horsepower)
+mean(Auto$weight)
+sd(Auto$weight)
+mean(Auto$acceleration)
+sd(Auto$acceleration)
+mean(Auto$year)
+sd(Auto$year)
+mean(Auto$origin)
+sd(Auto$origin)
+clean_mpg <- mpg[-c(10:85)]
+clean_cylinders <- Auto$cylinders[-c(10:85)]
+clean_displacement <- Auto$displacement[-c(10:85)]
+clean_horsepower <- horsepower[-c(10:85)]
+clean_weight <- Auto$weight[-c(10:85)]
+clean_acceleration <- Auto$acceleration[-c(10:85)]
+clean_year <- Auto$year[-c(10:85)]
+clean_origin <- Auto$origin[-c(10:85)]
+range(clean_mpg)
+mean(clean_mpg)
+sd(clean_mpg)
+range(clean_cylinders)
+mean(clean_cylinders)
+sd(clean_cylinders)
+range(clean_displacement)
+mean(clean_displacement)
+sd(clean_displacement)
+range(clean_horsepower)
+mean(clean_horsepower)
+sd(clean_horsepower)
+range(clean_weight)
+mean(clean_weight)
+sd(clean_weight)
+range(clean_acceleration)
+mean(clean_acceleration)
+sd(clean_acceleration)
+range(clean_year)
+mean(clean_year)
+sd(clean_year)
+range(clean_origin)
+mean(clean_origin)
+sd(clean_origin)
+png(file = "scatterplot_matrices.png")
+plot(x = Auto$cylinders, y = Auto$mpg,
+     xlab = "cylinders",
+     ylab = "mileage",
+     xlim = c(1,10),
+     ylim = c(1,50),
+     main = "Cylinders vs Mileage"
+     )
+plot(x = Auto$displacement, y = Auto$mpg,
+     xlab = "displacement",
+     ylab = "mileage",
+     xlim = c(60,460),
+     ylim = c(1,50),
+     main = "Displacement vs Mileage"
+)
+plot(x = Auto$horsepower, y = Auto$mpg,
+     xlab = "horsepower",
+     ylab = "mileage",
+     xlim = c(40,250),
+     ylim = c(1,50),
+     main = "Horsepower vs Mileage"
+)
+plot(x = Auto$weight, y = Auto$mpg,
+     xlab = "weight",
+     ylab = "mileage",
+     xlim = c(1600,5500),
+     ylim = c(1,50),
+     main = "Weight vs Mileage"
+)
+plot(x = Auto$acceleration, y = Auto$mpg,
+     xlab = "Acceleration",
+     ylab = "mileage",
+     xlim = c(1,25),
+     ylim = c(1,50),
+     main = "Acceleration vs Mileage"
+)
+plot(x = Auto$year, y = Auto$mpg,
+     xlab = "year",
+     ylab = "mileage",
+     xlim = c(50,100),
+     ylim = c(1,50),
+     main = "Year vs Mileage"
+)
+plot(x = Auto$origin, y = Auto$mpg,
+     xlab = "origin",
+     ylab = "mileage",
+     xlim = c(0,5),
+     ylim = c(1,50),
+     main = "Origin vs Mileage"
+)
