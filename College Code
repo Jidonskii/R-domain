@@ -1,0 +1,35 @@
+---
+title: "College"
+output: pdf_document
+date: "2024-02-09"
+---
+
+## Introduction
+ 
+In this document, we will calculate the summary of the College dataset
+and generate a scatterplot matrix for the first 10 columns in the dataset using R.
+
+# Importing the data
+```{r}
+College<- read.csv("C:/Users/jidon/Documents/R/College.csv", header = T)
+```
+
+# Attaching the data
+```{r}
+attach(College)
+```
+
+# Viewing the data
+```{r}
+View(College)
+```
+
+# Summarising the data frame
+```{r}
+summary.data.frame(College)
+```
+
+# Scatterplot matrix for the first 10 columns
+```{r}
+plot(College[3:12])
+```
